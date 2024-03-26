@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #003973, #E5E5BE);
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(21, 21, 131);
+            padding: 0 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 3s ease;
+        }
+
+        nav ul li a:hover {
+            color: lightblue;
+        }
+
+        /* Header Styles */
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .header-buttons button {
+            margin: 0 10px;
+            padding: 8px 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 2s ease-in-out;
+        }
+
+        .header-buttons button:hover {
+            background-color: #7949f3;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 4s ease-in-out forwards;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #7949f3;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .section-btn {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            animation: slideIn 4s ease-in-out forwards;
+        }
+
+        .section-btn button {
+            padding: 10px 20px;
+            background-color: purple;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 2s ease-in-out;
+        }
+
+        .section-btn button:hover {
+            background-color: #7949f3;
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .contact-form textarea {
+            width: 100%;
+            max-width: 500px;
+            height: 200px;
+            resize: vertical;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .footer h3 {
+            color: #7949f3;
+            margin-bottom: 10px;
+        }
+
+        .footer-rights {
+            margin-top: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Placeholder Images */
+        .project img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Tushar's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="header-buttons">
+            <button class="btn"
+                onclick="downloadResume('https://drive.google.com/file/d/1VEnd-uY1oQxVXolAIILWFx7LSrI9ZrvZ/view?usp=drive_link')">Download
+                Resume</button>
+            <button class="btn" onclick="visitGithub()">Visit Github</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Explore my skills, experiences, and projects below.</p>
+            <div class="section-btn">
+                <button onclick="scrollToSection('about')">About Me</button>
+                <button onclick="scrollToSection('projects')">Projects</button>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>I am a passionate web developer currently pursuing my B.Tech in the final year.</p>
+            <p>As a web developer intern at Uptricks Services, I am gaining valuable hands-on experience and honing my
+                skills in creating modern and responsive web applications.</p>
+            <p>I am deeply fascinated by the ever- evolving field of software engineering and aspire to become a highly
+                skilled and innovative software engineer.</p>
+            <div class="section-btn">
+                <button onclick="scrollToSection('home')">Home</button>
+                <button onclick="scrollToSection('projects')">Projects</button>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+
+            <!-- Text Analyzer App Project -->
+            <div class="project">
+                <h3>Text Analyzer App</h3>
+                <p>Sep 2023 - Oct 2023</p>
+                <p>Developed a text analyzer app leveraging React JS and the Natural Language Processing (NLP) library
+                    in Node.js. Empowered users to input text and glean profound insights, including sentiment analysis,
+                    word frequency, and part-of-speech (POS) tagging. Crafted an intuitive user interface, enriched with
+                    clear and compelling visualizations.</p>
+                <p>Technologies used: React JS, Node.js, Natural Language Processing (NLP).</p>
+            </div>
+
+            <!-- Decrypto Bot Project -->
+            <div class="project">
+                <h3>Decrypto Bot</h3>
+                <p>May 2022 - Aug 2022</p>
+                <p>Engineered a crypto trading bot in Python, seamlessly integrated with the Coinbase Pro API. Leveraged
+                    sophisticated technical indicators and implemented machine learning algorithms to execute discerning
+                    trading decisions. Demonstrated proficiency in Python, the Coinbase Pro API, and adeptly applied
+                    technical indicators and machine learning in the development process.</p>
+                <p>Technologies used: Python, Coinbase Pro API, technical indicators, machine learning.</p>
+            </div>
+
+            <!-- Dino Game Using Hand Gestures Project -->
+            <div class="project">
+                <h3>Dino Game Using Hand Gestures</h3>
+                <p>Aug 2021 - Dec 2021</p>
+                <p>Devised an interactive dinosaur game using Python and harnessed the capabilities of the OpenCV
+                    library for precise hand gesture recognition. Enabled users to effortlessly manipulate the
+                    dinosaur's movements through instinctive hand gestures captured by a webcam. Crafted and implemented
+                    an inviting user interface, offering lucid and succinct instructions to heighten the immersive
+                    gaming experience.</p>
+                <p>Technologies used: Python, OpenCV, hand gesture recognition.</p>
+            </div>
+
+            <!-- Virtual Voice Assistant Project -->
+            <div class="project">
+                <h3>Virtual Voice Assistant (Alpha)</h3>
+                <p>Jul 2020 - Nov 2020</p>
+                <p>Crafted a sophisticated virtual voice assistant in Python, seamlessly incorporating the Google
+                    Assistant API. Endowed the assistant with the ability to adeptly respond to inquiries, set
+                    reminders, orchestrate music playback, and manage smart home devices. Applied advanced Natural
+                    Language Processing (NLP) techniques to refine the precision and comprehension of user requests.</p>
+                <p>Technologies used: Python, Google Assistant API, Natural Language Processing (NLP).</p>
+            </div>
+
+            <!-- Add more project sections if needed -->
+
+            <div class="section-btn">
+                <button onclick="scrollToSection('home')">Home</button>
+                <button onclick="scrollToSection('about')">About Me</button>
+                <button onclick="scrollToSection('contact')">Contact</button>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Email: tusharpandey256@gmail.com</p>
+                <p>Contact Number: +91 7078486781</p>
+            </div>
+            <form id="contact-form" class="contact-form" action="mailto:tusharpandey256@gmail.com" method="POST"
+                enctype="text/plain">
+                <label for="user-message">Message:</label>
+                <textarea id="user-message" name="user-message" rows="9" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="section-btn">
+                <button onclick="scrollToSection('home')">Home</button>
+                <button onclick="scrollToSection('about')">About Me</button>
+                <button onclick="scrollToSection('projects')">Projects</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Tushar's Portfolio</h3>
+                <p>Explore the world of web development and innovation.</p>
+            </div>
+        </div>
+        <div class="footer-rights">
+            &copy; 2024 Tushar's Portfolio. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function downloadResume(resumeURL) {
+            var tempAnchor = document.createElement('a');
+            tempAnchor.href = resumeURL;
+            tempAnchor.setAttribute('download', 'Tushar_CV.pdf');
+            tempAnchor.style.display = 'none';
+            document.body.appendChild(tempAnchor);
+            tempAnchor.click();
+            document.body.removeChild(tempAnchor);
+        }
+
+        function visitGithub() {
+            var githubURL = 'https://github.com/Tushar-cm';
+            window.open(githubURL, '_blank');
+        }
+
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+
+</html>
